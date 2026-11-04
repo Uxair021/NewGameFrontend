@@ -1,0 +1,213 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Crazy 777's paytable ladder LCD readouts only — see games/Crazy777/pixi/Crazy777Scene.ts. */
+@font-face {
+  font-family: "Digital-7";
+  src: url("/fonts/digital-7 (mono).ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  /* Belt-and-suspenders against any single element (a fixed-width row, an un-wrapped flex group,
+   * etc.) accidentally forcing a horizontal scrollbar on narrow/mobile viewports — the actual fix
+   * for any such element is still to make that element responsive, not to rely on this clipping
+   * it, but this keeps one overlooked element from breaking the whole page's layout meanwhile. */
+  overflow-x: hidden;
+}
+
+/* iPhone / iPad / Android Chrome (html.rotate-screen): the home page's splash (Home2Page) sits above the RotatePhone screen and keeps its turned
+ * 90° look on a device held upright — the splash's own fixed root fills this box. */
+html.rotate-screen .rotate-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100001;
+}
+@media (orientation: portrait) and (any-pointer: coarse) {
+  html.rotate-screen .rotate-splash {
+    inset: auto;
+    top: 50%;
+    left: 50%;
+    width: 100vh;
+    width: 100dvh;
+    height: 100vw;
+    height: 100dvw;
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+}
+
+/* iPhone has no Fullscreen API for web pages. While the "Swipe up for full screen" layer
+ * (components/IOSFullscreen.tsx) is active it adds this class: in landscape the document gets some
+ * scroll room while the page itself (#root) stays fixed to the screen, so the player's swipe
+ * scrolls the document and Safari collapses its address / tab bars — the closest thing to full
+ * screen an iPhone allows. The page content never moves. */
+@media (orientation: landscape) {
+  html.ios-bar-collapse,
+  html.ios-bar-collapse body {
+    height: auto;
+  }
+  html.ios-bar-collapse body {
+    min-height: calc(100vh + 160px);
+  }
+  html.ios-bar-collapse #root {
+    position: fixed;
+    inset: 0;
+    height: auto;
+    overflow-y: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: #020617;
+  color: #f1f5f9;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Forces game pages into landscape presentation on touch-primary (phone/tablet) devices held
+ * in portrait — a pure CSS rotate, no Orientation Lock API, no device-tilt sensor, no
+ * permission prompts. (hover: none) and (pointer: coarse) scopes this to touch-primary devices
+ * only, so desktop (even a narrow/tall window) is never affected — matches the same touch-
+ * device detection used throughout this app. Applied to GamePage.tsx's root element only (see
+ * its "force-landscape-wrapper" class), not site-wide, so the lobby/admin/login pages keep
+ * their normal scrollable portrait layout.
+ *
+ * The box is sized with width/height SWAPPED (100vh x 100vw) and rotated 90deg around its own
+ * center — after rotation, a box that's "tall" (100vw) and "wide" (100vh) in its own local
+ * space exactly covers the real (portrait) viewport, with no part clipped or left over. Since
+ * position: fixed/absolute descendants use the nearest *transformed* ancestor as their
+ * containing block instead of the viewport (CSS spec behavior), every fixed-position overlay
+ * nested inside this wrapper (LoadingScreen, WinCelebration, free-spin intro/outro, the
+ * WebGL-context-lost fallback) automatically inherits the rotation too — no per-component
+ * changes needed anywhere else.
+ *
+ * MUST stay in sync with FORCE_LANDSCAPE_QUERY in games/shared/useFitScale.ts, which reads
+ * this identical condition in JS so the game's own canvas-fit-scale math knows to measure
+ * against the swapped (post-rotation) dimensions instead of the raw portrait window size.
+ *
+ * !important on every property below: GamePage.tsx's root element also carries Tailwind's
+ * own `min-h-screen`/`w-full` utility classes (its normal, non-rotated layout) on the exact
+ * same element — those and this rule have equal selector specificity, and which one wins by
+ * cascade order alone is fragile/unpredictable across builds. This override is deliberately
+ * narrow (one small, fully-contained set of properties, gated by its own media query) rather
+ * than a blanket specificity hack, so it's safe here without making !important a habit.
+ *
+ * The rotation direction (90deg, clockwise) is an arbitrary but common convention — once the
+ * device is actually turned to landscape, the OS flips the reported viewport orientation,
+ * this media query stops matching, and the transform is removed entirely, so content renders
+ * natively and right-side up regardless of which way the player turned the phone. The sign
+ * only matters for the rarer case of a device with auto-rotate switched off in system
+ * settings, where the player instead tilts their head to read the still-portrait-viewport,
+ * CSS-rotated content — if that ever reads upside-down on a real device, flip this to -90deg.
+ */
+@media screen and (orientation: portrait) and (hover: none) and (pointer: coarse) {
+  /* html.rotate-screen (iPhone / iPad / Android Chrome) is excluded: there the RotatePhone screen covers upright pages instead */
+  html:not(.rotate-screen) .force-landscape-wrapper {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vh !important;
+    height: 100vw !important;
+    min-height: 0 !important;
+    transform: translate(-50%, -50%) rotate(90deg) !important;
+    transform-origin: center center !important;
+  }
+
+  /* LoadingScreen.tsx's root (background photo + progress bar, shown before a game's Pixi
+   * scene is ready) — a position: fixed descendant of .force-landscape-wrapper, which already
+   * uses that transformed ancestor as its containing block per the CSS spec (any transformed
+   * element establishes a new containing block for fixed/absolute descendants), so it already
+   * rotates and fills the screen for free, with no transform of its own needed — confirmed
+   * directly: an isolated test page with this exact structure rendered a fixed child's text
+   * visibly rotated 90deg, matching the wrapper, with no additional rule. This explicit rule
+   * is a deliberate belt-and-suspenders, not a fix for an observed break: it re-asserts full
+   * coverage (inset: 0) so this stays correct even if the component's own classes ever change,
+   * instead of depending silently on the inherited-containing-block behavior above. The same
+   * reasoning covers every other fixed-position overlay nested in the wrapper (WinCelebration,
+   * free-spin intro/outro, the WebGL-context-lost fallback) without needing a rule each. */
+  html:not(.rotate-screen) .force-landscape-wrapper .loading-screen-root {
+    inset: 0 !important;
+  }
+
+  /* Same rotation for scrolling pages (currently /home2's lobby): identical box + transform as
+   * .force-landscape-wrapper above, plus it scrolls inside its own rotated box (a lobby is taller
+   * than the screen) and starts at the top instead of centering — centered overflow would clip
+   * the top of the page out of reach. Tailwind's `forced-landscape:` variant (tailwind.config.js)
+   * uses this same media query for in-page layout tweaks. */
+  html:not(.rotate-screen) .force-landscape-page {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    width: 100vh !important;
+    height: 100vw !important;
+    min-height: 0 !important;
+    transform: translate(-50%, -50%) rotate(90deg) !important;
+    transform-origin: center center !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    align-items: flex-start !important;
+  }
+}
+
+/* --- /home1 /home2 /home3 design tokens (ported from a separate GameFun project) ---------
+ * Scoped to a custom-property namespace ("nx-*") so nothing here touches this app's existing
+ * colors/fonts — only the ported homepage components (src/pages/homepages/) reference these,
+ * via Tailwind arbitrary-value syntax (e.g. border-[color:var(--color-nx-gold)]). The `brand-*`
+ * colors and title/stats/ui/jackpot fonts are real Tailwind utilities instead — see
+ * tailwind.config.js's theme.extend. */
+:root {
+  --color-nx-bg: #0e0a1a;
+  --color-nx-surface: #17122a;
+  --color-nx-surface-2: #1f1836;
+  --color-nx-purple: #6d28d9;
+  --color-nx-violet: #9333ea;
+  --color-nx-gold: #f5b942;
+  --color-nx-pink: #ec4899;
+  --color-nx-cyan: #22d3ee;
+  --color-nx-green: #22c55e;
+}
+
+.homepages-scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-nx-surface-2) transparent;
+}
+
+.homepages-scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.homepages-scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.homepages-click-glow {
+  animation: homepages-click-glow-pulse 650ms ease-out forwards;
+}
+
+@keyframes homepages-click-glow-pulse {
+  0% {
+    transform: scale(0.2);
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,118 @@
+/* Prefixed vh- so it can't collide with Sizzling 7s' .big-win-banner styles (Vite CSS is global). */
+.vh-big-win {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Sized to fill the screen while keeping the image's own aspect ratio (1024x447). Font sizes use
+   container query units, so the number stays proportional to the banner at any screen size. */
+.vh-big-win-content {
+  position: relative;
+  width: min(94vw, calc(90vh * 1024 / 447));
+  aspect-ratio: 1024 / 447;
+  container-type: inline-size;
+}
+
+.vh-big-win-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Centred on the purple plaque under the "BIG WIN" lettering. */
+.vh-big-win-amount {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 64%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: "Lilita One", "Arial Black", sans-serif;
+  font-size: 6.6cqw;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  /* Gold glossy fill with a dark outline, matching the banner's gold art. */
+  background: linear-gradient(180deg, #fff7c2 0%, #fcd34d 40%, #f59e0b 70%, #b45309 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.04em #3b0764;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.04em 0 #7c2d12) drop-shadow(0 0.08em 0.06em rgba(0, 0, 0, 0.7));
+  font-variant-numeric: tabular-nums;
+}
+
+/* Free-spins banner: the number sits a little higher to make room for its caption. */
+.vh-big-win-amount--with-caption {
+  top: 57%;
+}
+
+.vh-big-win-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 74%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: "Lilita One", "Arial Black", sans-serif;
+  font-size: 3.6cqw;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  color: #ffd34d;
+  -webkit-text-stroke: 0.04em #3b0764;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.06em 0.05em rgba(0, 0, 0, 0.7));
+}
+
+/* Grow out from the middle of the screen to full size (the reverse of the zoom-out). */
+.vh-big-win--entering .vh-big-win-content {
+  animation: vh-big-win-zoom-in 1s ease-out both;
+}
+
+/* Reverse: shrink into the middle of the screen and fade away. */
+.vh-big-win--leaving .vh-big-win-content {
+  animation: vh-big-win-zoom-out 0.45s ease-in forwards;
+}
+
+.vh-big-win--leaving {
+  animation: vh-big-win-fade 0.45s ease-in forwards;
+}
+
+@keyframes vh-big-win-zoom-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes vh-big-win-zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes vh-big-win-fade {
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}

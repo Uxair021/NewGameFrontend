@@ -1,0 +1,142 @@
+.big-win-banner {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Sized to fill the screen while keeping the banner's own aspect ratio (1547x1016). */
+.big-win-banner-content {
+  position: relative;
+  width: min(96vw, calc(96vh * 1547 / 1016));
+  aspect-ratio: 1547 / 1016;
+}
+
+.big-win-banner-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Sits on the red curtain, under the banner's own "BIG WIN" lettering. Font size scales with the
+   banner's width (container query units), so it stays proportional at any screen size. */
+.big-win-banner-content {
+  container-type: inline-size;
+}
+
+.big-win-banner-amount {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 75%;
+  transform: translateY(-50%);
+  text-align: center;
+  font-family: "Lilita One", "Arial Black", sans-serif;
+  font-size: 13cqw;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  /* Red glossy fill with a gold outline and a dark 3D drop, like the reference art. */
+  background: linear-gradient(180deg, #ff8a6a 0%, #f2261b 40%, #b50a0a 70%, #7a0000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-stroke: 0.035em #ffd34d;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.04em 0 #8a4a00) drop-shadow(0 0.08em 0.06em rgba(0, 0, 0, 0.7));
+  font-variant-numeric: tabular-nums;
+}
+
+/* Free-spins banner: the number sits a little higher to make room for its caption lines. */
+.big-win-banner-amount--with-caption {
+  top: 63%;
+}
+
+.big-win-banner-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: "Lilita One", "Arial Black", sans-serif;
+  line-height: 1;
+  white-space: nowrap;
+  transform: translateY(-50%);
+  color: #ffd34d;
+  -webkit-text-stroke: 0.04em #7a0000;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 0.06em 0.05em rgba(0, 0, 0, 0.7));
+}
+
+/* "FREE SPINS" */
+.big-win-banner-caption--0 {
+  top: 76%;
+  font-size: 6cqw;
+  letter-spacing: 0.06em;
+}
+
+/* Multipliers, e.g. "x30  x15  x8" */
+.big-win-banner-caption--1 {
+  top: 85%;
+  font-size: 3.6cqw;
+  color: #fff3c4;
+}
+
+/* Grow out from the middle of the screen to full size (the reverse of the zoom-out). */
+.big-win-banner--entering .big-win-banner-content {
+  animation: big-win-banner-zoom-in 1s ease-out both;
+}
+
+/* Reverse: shrink into the middle of the screen and fade away. */
+.big-win-banner--leaving .big-win-banner-content {
+  animation: big-win-banner-zoom-out 0.45s ease-in forwards;
+}
+
+.big-win-banner--leaving {
+  animation: big-win-banner-fade 0.45s ease-in forwards;
+}
+
+@keyframes big-win-banner-zoom-in {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes big-win-banner-zoom-out {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes big-win-banner-fade {
+  to {
+    background: rgba(0, 0, 0, 0);
+  }
+}
+
+/* Inside the game card instead of over the whole viewport (sized in the card's 1920px design
+   space), so the game's controls can sit above it while the free-spins award is up. */
+.big-win-banner--contained {
+  position: absolute;
+  z-index: 30;
+}
+
+.big-win-banner--contained .big-win-banner-content {
+  width: 1400px;
+}

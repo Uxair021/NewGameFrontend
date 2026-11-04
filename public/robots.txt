@@ -1,0 +1,5 @@
+# Texas Slots is not meant to appear in search engines or be crawled by bots.
+# Every crawler is asked not to fetch any page (pages also carry a noindex robots meta tag,
+# and the API sends an X-Robots-Tag: noindex header).
+User-agent: *
+Disallow: /

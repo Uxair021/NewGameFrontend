@@ -1,0 +1,180 @@
+.win-celebration {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.72);
+  cursor: pointer;
+  overflow: hidden;
+  animation: win-celebration-fade-in 0.25s ease-out;
+}
+
+.win-celebration--dismissing {
+  animation: win-celebration-fade-out 0.3s ease-in forwards;
+}
+
+@keyframes win-celebration-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes win-celebration-fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* On narrow/short viewports (see useFitScale), shrinks the whole card via a plain
+   scale() so it fits instead of overflowing — kept as a
+   wrapper around .win-celebration-content rather than on that element
+   itself, so it doesn't fight with that element's own pop-in animation
+   (which also animates `transform`). Desktop is unaffected (scale stays 1). */
+.win-celebration-fit {
+  transform-origin: center center;
+}
+
+.win-celebration-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Pops in from nothing at its own center point, with a bouncy overshoot. */
+  transform-origin: center center;
+  animation: win-celebration-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes win-celebration-pop {
+  0% { transform: scale(0) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(1.08) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Soft colored glow blob behind the card art, centered under the image. */
+.win-celebration-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  animation: win-celebration-glow-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes win-celebration-glow-pulse {
+  0%, 100% { opacity: 0.65; }
+  50% { opacity: 1; }
+}
+
+.win-celebration-title-image {
+  display: block;
+  width: auto;
+  height: auto;
+  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.5));
+}
+
+.win-celebration-amount {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  margin-top: 14px;
+  background-color: rgba(0, 0, 0, 0.52);
+  width: 400px;
+  padding: 30px 20px;
+  margin-top: -30px;
+  border-radius: 30px;
+}
+
+.win-celebration-hint {
+  margin-top: 20px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Tier-specific styling: escalating drama ---------- */
+
+.win-celebration--big-win .win-celebration-title-image {
+  width: min(380px, 70vw);
+}
+.win-celebration--big-win .win-celebration-glow {
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(255, 224, 102, 0.55), transparent 70%);
+}
+.win-celebration--big-win .win-celebration-amount {
+  font-size: 42px;
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(255, 224, 102, 0.6);
+}
+
+.win-celebration--mega-win .win-celebration-title-image {
+  width: min(460px, 78vw);
+  animation: win-celebration-shake 0.4s ease-in-out infinite;
+}
+.win-celebration--mega-win .win-celebration-glow {
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(255, 159, 28, 0.55), rgba(255, 94, 196, 0.35) 60%, transparent 75%);
+}
+.win-celebration--mega-win .win-celebration-amount {
+  font-size: 52px;
+  color: #ffe066;
+  text-shadow: 0 0 16px rgba(255, 224, 102, 0.7);
+}
+
+.win-celebration--jackpot .win-celebration-title-image {
+  width: min(400px, 74vw);
+  animation: win-celebration-shake 0.35s ease-in-out infinite;
+}
+.win-celebration--jackpot .win-celebration-glow {
+  width: 560px;
+  height: 560px;
+  background: conic-gradient(from 0deg, #ffe066, #ff5ec4, #66d9ff, #9dff8f, #ffe066);
+  animation:
+    win-celebration-glow-pulse 1.2s ease-in-out infinite,
+    win-celebration-rainbow-spin 3s linear infinite;
+}
+.win-celebration--jackpot .win-celebration-amount {
+  font-size: 68px;
+  color: #ffffff;
+  text-shadow: 0 0 24px rgba(255, 224, 102, 0.9);
+}
+
+@keyframes win-celebration-rainbow-spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes win-celebration-shake {
+  0%, 100% { transform: rotate(-1deg) scale(1); }
+  50% { transform: rotate(1deg) scale(1.02); }
+}
+
+/* ---------- Confetti particles (CSS-only) ---------- */
+
+.win-celebration-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.win-celebration-particle {
+  position: absolute;
+  top: -20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation-name: win-celebration-fall;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes win-celebration-fall {
+  0% { top: -20px; opacity: 1; }
+  100% { top: 100%; opacity: 0.2; }
+}

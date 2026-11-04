@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Keep the site out of search engines: no indexing, no following links, no cached copies,
+         snippets or image indexing. Also sent as an X-Robots-Tag header by the API, and
+         public/robots.txt asks crawlers not to fetch anything at all. -->
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex, notranslate" />
+    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
+    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
+    <title>Texas</title>
+    <!-- Installable app ("Add to Home Screen"): opened from the home-screen icon the site runs
+         without the browser's address bar / toolbar — the full-screen path on iPhone. -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- iPhone / iPad (any browser — all are Safari's WebKit) and Google Chrome on Android: turns off
+         the CSS 90° page rotation (index.css) in favour of the "Please rotate your phone" screen.
+         Same tests as src/platform.ts. -->
+    <script>
+      (function () {
+        var ua = navigator.userAgent;
+        var ios = /iPhone|iPod|iPad/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+        var androidChrome = /Android/.test(ua) && /Chrome\/\d/.test(ua) &&
+          !/SamsungBrowser|EdgA|OPR\/|Firefox|YaBrowser|UCBrowser|MiuiBrowser|HuaweiBrowser|DuckDuckGo|; wv\)/.test(ua);
+        if (ios || androidChrome) document.documentElement.classList.add("rotate-screen");
+      })();
+    </script>
+    <meta name="theme-color" content="#050a1e" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Texas Slots" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

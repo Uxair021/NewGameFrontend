@@ -1,0 +1,987 @@
+{
+  "_comment": "Cut list for scripts/zeusVsHades-slice.mjs. src = file in public/symbols/zeusVsHades/sharedItems (or ../art), rect = [x,y,w,h] (omit for whole file), rot = degrees clockwise. Output: public/symbols/zeusVsHades/game/<out>.png",
+  "items": [
+    {
+      "out": "sym/olympus-1",
+      "src": "3c7186b8-fdb3-4189-ba35-835e650b43c8.png"
+    },
+    {
+      "out": "sym/olympus-2",
+      "src": "27ae4349-9635-4232-ab99-4d771fecbe30.png"
+    },
+    {
+      "out": "sym/olympus-3",
+      "src": "c151a2bd-58c3-47e3-aa6c-2911acf6ef70.png"
+    },
+    {
+      "out": "sym/olympus-4",
+      "src": "24d620b5-2a33-4b00-aea5-131a747d135e.png"
+    },
+    {
+      "out": "sym/olympus-5",
+      "src": "b2bdd424-c44a-457c-90df-ba0223787cb8.png"
+    },
+    {
+      "out": "sym/olympus-6",
+      "src": "ff5635f4-1466-4e92-8801-8442e92f64f3.png"
+    },
+    {
+      "out": "sym/olympus-7",
+      "src": "17e20ee0-dc3c-45f9-ad0a-39518f7b57af.png"
+    },
+    {
+      "out": "sym/olympus-8",
+      "src": "a95ad70a-3ea1-43db-9ee5-c703d230b09e.png"
+    },
+    {
+      "out": "sym/olympus-9",
+      "src": "77534add-0162-463b-a5f2-6e1f8cbc0572.png"
+    },
+    {
+      "out": "sym/olympus-10",
+      "src": "3dbfda18-d8c4-4cc0-913b-d0b0bfcaeb9f.png"
+    },
+    {
+      "out": "sym/olympus-11",
+      "src": "abfd2197-8a2e-482d-b7fa-3ab62347da77.png"
+    },
+    {
+      "out": "sym/olympus-12",
+      "src": "153221ec-4fe5-4679-ab6b-531246c2f19d.png"
+    },
+    {
+      "out": "sym/olympus-13",
+      "src": "154464a9-06a2-43ae-b1b1-a6e62c80c806.png"
+    },
+    {
+      "out": "sym/hades-1",
+      "src": "7a279ab0-da41-4017-85ae-ae1f95552d9b.png"
+    },
+    {
+      "out": "sym/hades-2",
+      "src": "9253a376-de68-4d01-84d7-46b589b0c974.png"
+    },
+    {
+      "out": "sym/hades-3",
+      "src": "dcace039-eb7b-49b5-8e90-865f458fafa9.png"
+    },
+    {
+      "out": "sym/hades-4",
+      "src": "87090fcc-6ecd-4a47-9f1e-ce93630426ff.png"
+    },
+    {
+      "out": "sym/hades-5",
+      "src": "84fa9201-6f07-4522-af26-11920a671fc8.png"
+    },
+    {
+      "out": "sym/hades-6",
+      "src": "578c89dd-9a28-493b-b1cb-51dda4b4a69a.png"
+    },
+    {
+      "out": "sym/hades-7",
+      "src": "87f37056-85c8-45ea-8bdc-c25fd8fd21f2.png"
+    },
+    {
+      "out": "sym/hades-8",
+      "src": "2271523f-9c5b-4c95-9bee-e7c3e99ad02a.png"
+    },
+    {
+      "out": "sym/hades-9",
+      "src": "5ece96aa-910b-4c21-820a-2695ed325287.png"
+    },
+    {
+      "out": "sym/hades-10",
+      "src": "cdcfe403-59e3-468b-b0c4-8f8191d4cca5.png"
+    },
+    {
+      "out": "sym/hades-11",
+      "src": "106dbf9b-b57a-4228-aa64-6da1f7c5aa41.png"
+    },
+    {
+      "out": "sym/hades-12",
+      "src": "e2f63ed9-66cf-4694-80c3-dda17b748d4f.png"
+    },
+    {
+      "out": "sym/hades-13",
+      "src": "eb0a8017-e5e3-4e2f-acc9-db30b4be3c7f.png"
+    },
+    {
+      "out": "blur/olympus-4",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        3,
+        29,
+        214,
+        209
+      ]
+    },
+    {
+      "out": "blur/olympus-9",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        254,
+        109,
+        141,
+        161
+      ]
+    },
+    {
+      "out": "blur/olympus-5",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        425,
+        133,
+        183,
+        183
+      ]
+    },
+    {
+      "out": "blur/olympus-6",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        636,
+        162,
+        139,
+        188
+      ]
+    },
+    {
+      "out": "blur/olympus-7",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        788,
+        193,
+        134,
+        164
+      ]
+    },
+    {
+      "out": "blur/olympus-13",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        2,
+        293,
+        198,
+        257
+      ]
+    },
+    {
+      "out": "blur/olympus-2",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        208,
+        338,
+        195,
+        215
+      ]
+    },
+    {
+      "out": "blur/olympus-8",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        437,
+        386,
+        140,
+        173
+      ]
+    },
+    {
+      "out": "blur/olympus-12",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        627,
+        412,
+        156,
+        160
+      ]
+    },
+    {
+      "out": "blur/olympus-1",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        10,
+        605,
+        229,
+        226
+      ]
+    },
+    {
+      "out": "blur/olympus-3",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        252,
+        617,
+        194,
+        219
+      ]
+    },
+    {
+      "out": "blur/olympus-10",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        476,
+        661,
+        148,
+        165
+      ]
+    },
+    {
+      "out": "blur/olympus-11",
+      "src": "2048f9f2-6825-44d9-93bc-28327f97b2e3.png",
+      "rect": [
+        687,
+        665,
+        115,
+        160
+      ]
+    },
+    {
+      "out": "blur/hades-13",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        2,
+        28,
+        198,
+        261
+      ]
+    },
+    {
+      "out": "blur/hades-11",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        629,
+        42,
+        123,
+        169
+      ]
+    },
+    {
+      "out": "blur/hades-8",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        790,
+        45,
+        132,
+        166
+      ]
+    },
+    {
+      "out": "blur/hades-2",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        208,
+        78,
+        195,
+        211
+      ]
+    },
+    {
+      "out": "blur/hades-5",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        413,
+        160,
+        191,
+        179
+      ]
+    },
+    {
+      "out": "blur/hades-10",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        621,
+        274,
+        145,
+        168
+      ]
+    },
+    {
+      "out": "blur/hades-3",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        2,
+        368,
+        194,
+        238
+      ]
+    },
+    {
+      "out": "blur/hades-7",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        224,
+        404,
+        164,
+        198
+      ]
+    },
+    {
+      "out": "blur/hades-9",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        431,
+        474,
+        136,
+        165
+      ]
+    },
+    {
+      "out": "blur/hades-6",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        628,
+        498,
+        120,
+        177
+      ]
+    },
+    {
+      "out": "blur/hades-1",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        15,
+        661,
+        247,
+        234
+      ]
+    },
+    {
+      "out": "blur/hades-4",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        280,
+        699,
+        198,
+        201
+      ]
+    },
+    {
+      "out": "blur/hades-12",
+      "src": "fcb2d17e-8d4b-44b6-81d3-6221e7482cd6.png",
+      "rect": [
+        493,
+        736,
+        168,
+        162
+      ]
+    },
+    {
+      "out": "fx/winframe-olympus",
+      "src": "64dc2ff5-0ea4-4f4a-a1f7-ba321b458f86.png"
+    },
+    {
+      "out": "fx/winframe-hades",
+      "src": "6e14c87c-7c78-4ae1-8937-5b03dcec9a30.png"
+    },
+    {
+      "out": "fx/column-lightning",
+      "src": "1112d7ba-c31c-40fb-94f7-a4189f5dd652.png"
+    },
+    {
+      "out": "fx/column-fire",
+      "src": "42abadb6-a4e0-4f5d-85de-274b23d0938b.png"
+    },
+    {
+      "out": "fx/column-stone",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        94,
+        0,
+        618,
+        1311
+      ]
+    },
+    {
+      "out": "fx/column-border",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        1216,
+        75,
+        228,
+        850
+      ]
+    },
+    {
+      "out": "bg/olympus-sky",
+      "src": "406b268b-3092-4b55-98b0-05287457ae15.jpg"
+    },
+    {
+      "out": "bg/olympus-temple",
+      "src": "ec060521-b315-411c-b16a-bf36d88b5e1a.png",
+      "rect": [
+        1,
+        1077,
+        1777,
+        852
+      ]
+    },
+    {
+      "out": "bg/hades",
+      "src": "../art/bg-hades.jpg"
+    },
+    {
+      "out": "bg/chooser",
+      "src": "16f59fcd-d4d3-40f5-b74e-f4839e5cab4e.jpg"
+    },
+    {
+      "out": "frame-olympus",
+      "src": "7ef74658-1bfb-4138-8b16-f5df58377d9b.png"
+    },
+    {
+      "out": "frame-hades",
+      "src": "26dbac0b-aeaa-4552-a7aa-6bb74dd14868.png"
+    },
+    {
+      "out": "logo",
+      "src": "147c05fe-cb04-4aec-8b44-a95c66d1e847.png"
+    },
+    {
+      "out": "words/nice",
+      "src": "0d11fb21-8985-40ce-85f7-dc09dc506ad6.png",
+      "rect": [
+        0,
+        0,
+        467,
+        180
+      ]
+    },
+    {
+      "out": "words/mega",
+      "src": "86c5868b-ed3c-4f3a-9517-aeefbb17d03d.png",
+      "rect": [
+        0,
+        0,
+        520,
+        178
+      ]
+    },
+    {
+      "out": "words/superb",
+      "src": "022114d6-4d8c-4887-9e93-0b010ce197b1.png",
+      "rect": [
+        0,
+        0,
+        669,
+        180
+      ]
+    },
+    {
+      "out": "words/sensational",
+      "src": "cefba4fd-c4e4-4f25-965f-b3fb34d446d6.png",
+      "rect": [
+        0,
+        290,
+        1400,
+        251
+      ]
+    },
+    {
+      "out": "words/bar",
+      "src": "cefba4fd-c4e4-4f25-965f-b3fb34d446d6.png",
+      "rect": [
+        0,
+        0,
+        1020,
+        274
+      ]
+    },
+    {
+      "out": "ui/volatility-banner",
+      "src": "240a8229-6e62-4996-91c9-665ff43c69fe.png",
+      "rect": [
+        7,
+        262,
+        478,
+        261
+      ],
+      "rot": 90
+    },
+    {
+      "out": "ui/rod-red",
+      "src": "240a8229-6e62-4996-91c9-665ff43c69fe.png",
+      "rect": [
+        641,
+        182,
+        39,
+        340
+      ],
+      "rot": 90
+    },
+    {
+      "out": "ui/buy-button",
+      "src": "efc8543c-e43f-437b-aba9-52aaa2a5d6ee.png",
+      "rect": [
+        1112,
+        21,
+        110,
+        312
+      ],
+      "rot": 90
+    },
+    {
+      "out": "ui/banner-orange",
+      "src": "efc8543c-e43f-437b-aba9-52aaa2a5d6ee.png",
+      "rect": [
+        1,
+        3,
+        697,
+        389
+      ],
+      "rot": 90
+    },
+    {
+      "out": "ui/rod-orange",
+      "src": "efc8543c-e43f-437b-aba9-52aaa2a5d6ee.png",
+      "rect": [
+        704,
+        337,
+        506,
+        54
+      ]
+    },
+    {
+      "out": "ui/ribbon-red",
+      "src": "efc8543c-e43f-437b-aba9-52aaa2a5d6ee.png",
+      "rect": [
+        712,
+        157,
+        387,
+        159
+      ]
+    },
+    {
+      "out": "ui/btn-close-big",
+      "src": "efc8543c-e43f-437b-aba9-52aaa2a5d6ee.png",
+      "rect": [
+        705,
+        11,
+        225,
+        137
+      ]
+    },
+    {
+      "out": "ui/banner-purple",
+      "src": "013d4e29-5107-4794-a818-357cc758fa2e.png",
+      "rect": [
+        408,
+        19,
+        616,
+        384
+      ],
+      "rot": 90
+    },
+    {
+      "out": "ui/rod-purple",
+      "src": "013d4e29-5107-4794-a818-357cc758fa2e.png",
+      "rect": [
+        1031,
+        348,
+        500,
+        51
+      ]
+    },
+    {
+      "out": "ui/panel-orange",
+      "src": "2c9ccb7f-4983-4601-9d23-bbe73b331c2b.png",
+      "rect": [
+        0,
+        492,
+        745,
+        491
+      ]
+    },
+    {
+      "out": "ui/btn-x",
+      "src": "2c9ccb7f-4983-4601-9d23-bbe73b331c2b.png",
+      "rect": [
+        751,
+        756,
+        169,
+        102
+      ]
+    },
+    {
+      "out": "ui/btn-check",
+      "src": "2c9ccb7f-4983-4601-9d23-bbe73b331c2b.png",
+      "rect": [
+        753,
+        871,
+        169,
+        102
+      ]
+    },
+    {
+      "out": "ui/btn-green",
+      "src": "3126ef67-9280-4fec-8f94-d21c12c304a4.png"
+    },
+    {
+      "out": "ui/spin-arrows",
+      "src": "4149210a-7cae-491c-a2c4-0d9552479770.png",
+      "rect": [
+        274,
+        335,
+        220,
+        179
+      ]
+    },
+    {
+      "out": "ui/volatility-olympus",
+      "src": "6e9a225c-f08e-48b6-a4a3-02bf71408dfa.png"
+    },
+    {
+      "out": "ui/volatility-hades",
+      "src": "60cfd551-c2b0-4563-b9ee-f566e1b8aae2.png",
+      "rect": [
+        48,
+        46,
+        301,
+        274
+      ]
+    },
+    {
+      "out": "fx/digits",
+      "src": "4e0605c2-7988-43ed-a6ea-0791445fb3bd.png"
+    },
+    {
+      "out": "fx/winframe-lightning-1",
+      "src": "00ab24ad-cf54-46c0-855f-e6c43dd449c7.png",
+      "rect": [
+        23,
+        221,
+        643,
+        533
+      ]
+    },
+    {
+      "out": "fx/winframe-lightning-2",
+      "src": "00ab24ad-cf54-46c0-855f-e6c43dd449c7.png",
+      "rect": [
+        1257,
+        88,
+        667,
+        536
+      ]
+    },
+    {
+      "out": "fx/winframe-lightning-3",
+      "src": "00ab24ad-cf54-46c0-855f-e6c43dd449c7.png",
+      "rect": [
+        710,
+        95,
+        530,
+        647
+      ],
+      "rot": 90
+    },
+    {
+      "out": "fx/winframe-lightning-4",
+      "src": "00ab24ad-cf54-46c0-855f-e6c43dd449c7.png",
+      "size": [
+        516,
+        512
+      ],
+      "parts": [
+        {
+          "rect": [
+            1266,
+            648,
+            500,
+            264
+          ],
+          "at": [
+            0,
+            0
+          ]
+        },
+        {
+          "rect": [
+            1265,
+            1047,
+            516,
+            248
+          ],
+          "at": [
+            0,
+            264
+          ]
+        }
+      ]
+    },
+    {
+      "out": "fx/winframe-lightning-5",
+      "src": "00ab24ad-cf54-46c0-855f-e6c43dd449c7.png",
+      "size": [
+        505,
+        523
+      ],
+      "parts": [
+        {
+          "rect": [
+            1270,
+            1338,
+            498,
+            269
+          ],
+          "at": [
+            0,
+            0
+          ]
+        },
+        {
+          "rect": [
+            1267,
+            1733,
+            505,
+            254
+          ],
+          "at": [
+            0,
+            269
+          ]
+        }
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-1",
+      "src": "891c89e0-e795-4636-91a9-2f64e68a6dd7.png",
+      "rect": [
+        63,
+        14,
+        659,
+        640
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-2",
+      "src": "891c89e0-e795-4636-91a9-2f64e68a6dd7.png",
+      "rect": [
+        853,
+        14,
+        654,
+        639
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-3",
+      "src": "891c89e0-e795-4636-91a9-2f64e68a6dd7.png",
+      "rect": [
+        60,
+        739,
+        662,
+        639
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-4",
+      "src": "891c89e0-e795-4636-91a9-2f64e68a6dd7.png",
+      "rect": [
+        851,
+        737,
+        655,
+        639
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-5",
+      "src": "a994f8c9-9ffc-4666-b190-97c687f19eb9.png",
+      "rect": [
+        36,
+        606,
+        704,
+        655
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-6",
+      "src": "a994f8c9-9ffc-4666-b190-97c687f19eb9.png",
+      "rect": [
+        843,
+        589,
+        663,
+        638
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-7",
+      "src": "a994f8c9-9ffc-4666-b190-97c687f19eb9.png",
+      "rect": [
+        30,
+        1339,
+        717,
+        652
+      ]
+    },
+    {
+      "out": "fx/winframe-fire-8",
+      "src": "a994f8c9-9ffc-4666-b190-97c687f19eb9.png",
+      "rect": [
+        842,
+        1321,
+        664,
+        629
+      ]
+    },
+    {
+      "out": "fx/light-burst",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        742,
+        35,
+        390,
+        875
+      ]
+    },
+    {
+      "out": "fx/clouds",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        713,
+        1060,
+        1041,
+        244
+      ]
+    },
+    {
+      "out": "fx/bolt-1",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        1448,
+        185,
+        179,
+        127
+      ]
+    },
+    {
+      "out": "fx/bolt-2",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        1465,
+        447,
+        260,
+        134
+      ]
+    },
+    {
+      "out": "fx/bolt-3",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        1467,
+        607,
+        256,
+        127
+      ]
+    },
+    {
+      "out": "fx/bolt-4",
+      "src": "572c31e6-02dd-4ca2-b0b4-e1eaaba60078.png",
+      "rect": [
+        1467,
+        767,
+        249,
+        121
+      ]
+    },
+    {
+      "out": "hfs/frame-half",
+      "src": "60238cfa-4353-4ad8-8c34-f3fd634a34f4.png",
+      "rect": [
+        0,
+        0,
+        700,
+        752
+      ],
+      "clear": [
+        [
+          0,
+          0
+        ],
+        [
+          62,
+          0
+        ],
+        [
+          160,
+          600
+        ],
+        [
+          118,
+          690
+        ],
+        [
+          0,
+          700
+        ]
+      ]
+    },
+    {
+      "out": "hfs/gem-h",
+      "src": "60238cfa-4353-4ad8-8c34-f3fd634a34f4.png",
+      "rect": [
+        707,
+        494,
+        111,
+        81
+      ]
+    },
+    {
+      "out": "hfs/gem-v",
+      "src": "60238cfa-4353-4ad8-8c34-f3fd634a34f4.png",
+      "rect": [
+        706,
+        621,
+        98,
+        131
+      ]
+    },
+    {
+      "out": "hfs/lava",
+      "src": "9ec0ee74-de42-478f-92c7-6a0fbef87f39.png",
+      "rect": [
+        1,
+        978,
+        636,
+        299
+      ]
+    },
+    {
+      "out": "hfs/bar",
+      "src": "9ec0ee74-de42-478f-92c7-6a0fbef87f39.png",
+      "rect": [
+        1,
+        1279,
+        943,
+        188
+      ]
+    },
+    {
+      "out": "hfs/fire-1",
+      "src": "7f7facac-208e-4b48-8798-4b8baeacf1ef.png",
+      "rect": [
+        0,
+        0,
+        608,
+        154
+      ]
+    },
+    {
+      "out": "hfs/fire-2",
+      "src": "7f7facac-208e-4b48-8798-4b8baeacf1ef.png",
+      "rect": [
+        0,
+        157,
+        608,
+        154
+      ]
+    },
+    {
+      "out": "hfs/fire-3",
+      "src": "7f7facac-208e-4b48-8798-4b8baeacf1ef.png",
+      "rect": [
+        0,
+        314,
+        608,
+        154
+      ]
+    }
+  ]
+}

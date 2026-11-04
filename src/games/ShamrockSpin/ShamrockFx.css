@@ -1,0 +1,115 @@
+/* Rye comes from FreeSpinCelebration.css, which this game always loads. */
+
+.shamrock-bigwin {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  background: radial-gradient(circle at center, rgba(0, 40, 14, 0.72) 0%, rgba(0, 20, 8, 0.25) 62%, transparent 80%);
+  animation: shamrock-fade-in 0.2s ease-out;
+}
+
+@keyframes shamrock-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Slowly turning sunburst, centred behind whatever it sits in */
+.shamrock-rays {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1500px;
+  height: 1500px;
+  margin: -750px 0 0 -750px;
+  pointer-events: none;
+  background: repeating-conic-gradient(rgba(255, 216, 74, 0.26) 0deg 12deg, transparent 12deg 30deg);
+  -webkit-mask-image: radial-gradient(circle, #000 0%, transparent 62%);
+  mask-image: radial-gradient(circle, #000 0%, transparent 62%);
+  animation: shamrock-rays-turn 18s linear infinite;
+}
+
+@keyframes shamrock-rays-turn {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shamrock-bigwin-content {
+  position: relative;
+  text-align: center;
+  animation: shamrock-slam 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes shamrock-slam {
+  from {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.shamrock-bigwin-title {
+  font-family: "Rye", "Alfa Slab One", "Rockwell", serif;
+  font-size: 116px;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
+  background: linear-gradient(180deg, #fffde8 0%, #ffea78 25%, #f3a01a 62%, #ca6b02 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 5px 0 #01240a) drop-shadow(0 0 22px rgba(0, 230, 64, 0.85));
+  animation: shamrock-title-breathe 0.7s ease-in-out infinite alternate 0.5s;
+}
+
+.shamrock-bigwin-title--2 {
+  font-size: 132px;
+}
+
+.shamrock-bigwin-title--3 {
+  font-size: 150px;
+  filter: drop-shadow(0 5px 0 #3a1c00) drop-shadow(0 0 28px rgba(255, 150, 30, 0.95));
+}
+
+@keyframes shamrock-title-breathe {
+  from {
+    transform: scale(0.97);
+  }
+  to {
+    transform: scale(1.04);
+  }
+}
+
+.shamrock-bigwin-amount {
+  margin-top: 8px;
+  font-size: 92px;
+  font-weight: 900;
+  line-height: 1;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 5px 0 #053a1b, 0 0 24px rgba(255, 216, 74, 0.9);
+}
+
+/* The "Free Spins Complete" card */
+.shamrock-complete-card {
+  animation: shamrock-slam 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shamrock-rays,
+  .shamrock-bigwin-title {
+    animation: none;
+  }
+}
