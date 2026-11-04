@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#123a5e"/>
+      <stop offset="100%" stop-color="#04101f"/>
+    </radialGradient>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fff2b0"/>
+      <stop offset="35%" stop-color="#f2c14e"/>
+      <stop offset="70%" stop-color="#c8890f"/>
+      <stop offset="100%" stop-color="#8a5a00"/>
+    </linearGradient>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffe27a"/>
+      <stop offset="100%" stop-color="#c99400"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg)"/>
+  <polygon points="40,40 360,40 372,64 360,88 40,88 28,64" fill="url(#ribbon)" stroke="#5c3d00" stroke-width="2"/>
+  <text x="200" y="72" font-family="Georgia, serif" font-size="30" font-weight="bold" font-style="italic" fill="#1a2a52" text-anchor="middle">LIFE OF LUXURY</text>
+  <text x="200" y="112" font-family="Georgia, serif" font-size="20" font-weight="bold" font-style="italic" fill="#f2c14e" text-anchor="middle">GOOD LUCK</text>
+
+  <rect x="30" y="140" width="340" height="120" rx="12" fill="#ffffff" stroke="#38bdf8" stroke-width="6"/>
+  <line x1="98" y1="140" x2="98" y2="260" stroke="#bae6fd" stroke-width="3"/>
+  <line x1="166" y1="140" x2="166" y2="260" stroke="#bae6fd" stroke-width="3"/>
+  <line x1="234" y1="140" x2="234" y2="260" stroke="#bae6fd" stroke-width="3"/>
+  <line x1="302" y1="140" x2="302" y2="260" stroke="#bae6fd" stroke-width="3"/>
+
+  <clipPath id="cell0"><rect x="38" y="146" width="52" height="52" rx="4"/></clipPath>
+  <clipPath id="cell1"><rect x="106" y="146" width="52" height="52" rx="4"/></clipPath>
+  <clipPath id="cell2"><rect x="174" y="146" width="52" height="52" rx="4"/></clipPath>
+  <clipPath id="cell3"><rect x="242" y="146" width="52" height="52" rx="4"/></clipPath>
+  <clipPath id="cell4"><rect x="310" y="146" width="52" height="52" rx="4"/></clipPath>
+  <image href="goldBar.png" x="38" y="146" width="52" height="52" clip-path="url(#cell0)" preserveAspectRatio="xMidYMid slice"/>
+  <image href="ring.png" x="106" y="146" width="52" height="52" clip-path="url(#cell1)" preserveAspectRatio="xMidYMid slice"/>
+  <image href="boat.png" x="174" y="146" width="52" height="52" clip-path="url(#cell2)" preserveAspectRatio="xMidYMid slice"/>
+  <image href="watch.png" x="242" y="146" width="52" height="52" clip-path="url(#cell3)" preserveAspectRatio="xMidYMid slice"/>
+  <image href="car.png" x="310" y="146" width="52" height="52" clip-path="url(#cell4)" preserveAspectRatio="xMidYMid slice"/>
+</svg>
