@@ -1,0 +1,15 @@
+```gitignore
+node_modules/
+dist/
+.env
+.env.local
+*.log
+*.tsbuildinfo
+
+# Design source files (too large for GitHub)
+*.psd
+
+# Large ZIP files
+/public/symbols.zip
+/public/symbols/
+```
